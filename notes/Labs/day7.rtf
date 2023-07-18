@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red13\green12\blue26;\red193\green193\blue193;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c5882\c5882\c13725;\cssrgb\c80000\c80000\c80000;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid2\'00;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww28600\viewh15280\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 --- Day 7: No Space Left On Device ---\
+\pard\pardeftab720\sa373\partightenfactor0
+
+\fs37\fsmilli18667 \cf4 \cb3 \strokec4 You can hear birds chirping and raindrops hitting leaves as the expedition proceeds. Occasionally, you can even hear much louder sounds in the distance; how big do the animals get out here, anyway?\
+The device the Elves gave you has problems with more than just its communication system. You try to run a system update:\
+\pard\pardeftab720\partightenfactor0
+\cf4 $ system-update --please --pretty-please-with-sugar-on-top\
+Error: No space left on device\
+\pard\pardeftab720\sa373\partightenfactor0
+\cf4 Perhaps you can delete some files to make space for the update?\
+You browse around the filesystem to assess the situation and save the resulting terminal output (your puzzle input). For example:\
+\pard\pardeftab720\partightenfactor0
+\cf4 $ cd /\
+$ ls\
+dir a\
+14848514 b.txt\
+8504156 c.dat\
+dir d\
+$ cd a\
+$ ls\
+dir e\
+29116 f\
+2557 g\
+62596 h.lst\
+$ cd e\
+$ ls\
+584 i\
+$ cd ..\
+$ cd ..\
+$ cd d\
+$ ls\
+4060174 j\
+8033020 d.log\
+5626152 d.ext\
+7214296 k\
+\pard\pardeftab720\sa373\partightenfactor0
+\cf4 The filesystem consists of a tree of files (plain data) and directories (which can contain other directories or files). The outermost directory is called\'a0/. You can navigate around the filesystem, moving into or out of directories and listing the contents of the directory you're currently in.\
+Within the terminal output, lines that begin with\'a0$\'a0are\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 commands you executed\cf4 \strokec4 \shad0 , very much like some modern computers:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 cd\'a0means\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 change directory\cf4 \strokec4 \shad0 . This changes which directory is the current directory, but the specific result depends on the argument:\cb1 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls1\ilvl1\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 cd x\'a0moves\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 in\cf4 \strokec4 \shad0 \'a0one level: it looks in the current directory for the directory named\'a0x\'a0and makes it the current directory.\cb1 \
+\ls1\ilvl1\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 cd ..\'a0moves\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 out\cf4 \strokec4 \shad0 \'a0one level: it finds the directory that contains the current directory, then makes that directory the current directory.\cb1 \
+\ls1\ilvl1\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 cd /\'a0switches the current directory to the outermost directory,\'a0/.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 ls\'a0means\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 list\cf4 \strokec4 \shad0 . It prints out all of the files and directories immediately contained by the current directory:\cb1 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls1\ilvl1\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 123 abc\'a0means that the current directory contains a file named\'a0abc\'a0with size\'a0123.\cb1 \
+\ls1\ilvl1\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 dir xyz\'a0means that the current directory contains a directory named\'a0xyz.\cb1 \
+\pard\pardeftab720\sa373\partightenfactor0
+\cf4 \cb3 \strokec4 Given the commands and output in the example above, you can determine that the filesystem looks visually like this:\
+\pard\pardeftab720\partightenfactor0
+\cf4 - / (dir)\
+  - a (dir)\
+    - e (dir)\
+      - i (file, size=584)\
+    - f (file, size=29116)\
+    - g (file, size=2557)\
+    - h.lst (file, size=62596)\
+  - b.txt (file, size=14848514)\
+  - c.dat (file, size=8504156)\
+  - d (dir)\
+    - j (file, size=4060174)\
+    - d.log (file, size=8033020)\
+    - d.ext (file, size=5626152)\
+    - k (file, size=7214296)\
+\pard\pardeftab720\sa373\partightenfactor0
+\cf4 Here, there are four directories:\'a0/\'a0(the outermost directory),\'a0a\'a0and\'a0d\'a0(which are in\'a0/), and\'a0e\'a0(which is in\'a0a). These directories also contain files of various sizes.\
+Since the disk is full, your first step should probably be to find directories that are good candidates for deletion. To do this, you need to determine the\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 total size\cf4 \strokec4 \shad0 \'a0of each directory. The total size of a directory is the sum of the sizes of the files it contains, directly or indirectly. (Directories themselves do not count as having any intrinsic size.)\
+The total sizes of the directories above can be found as follows:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf4 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 The total size of directory\'a0e\'a0is\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 584\cf4 \strokec4 \shad0 \'a0because it contains a single file\'a0i\'a0of size 584 and no other directories.\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 The directory\'a0a\'a0has total size\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 94853\cf4 \strokec4 \shad0 \'a0because it contains files\'a0f\'a0(size 29116),\'a0g\'a0(size 2557), and\'a0h.lst\'a0(size 62596), plus file\'a0i\'a0indirectly (a\'a0contains\'a0e\'a0which contains\'a0i).\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Directory\'a0d\'a0has total size\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 24933642\cf4 \strokec4 \shad0 .\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 As the outermost directory,\'a0/\'a0contains every file. Its total size is\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 48381165\cf4 \strokec4 \shad0 , the sum of the size of every file.\cb1 \
+\pard\pardeftab720\sa373\partightenfactor0
+\cf4 \cb3 \strokec4 To begin, find all of the directories with a total size of\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 at most 100000\cf4 \strokec4 \shad0 , then calculate the sum of their total sizes. In the example above, these directories are\'a0a\'a0and\'a0e; the sum of their total sizes is\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 95437\cf4 \strokec4 \shad0 \'a0(94853 + 584). (As in this example, this process can count files more than once!)\
+Find all of the directories with a total size of at most 100000.\'a0\cf2 \strokec2 \shad\shadx0\shady0\shadr100\shado255 \shadc0 What is the sum of the total sizes of those directories?\cf4 \strokec4 \shad0 \
+}

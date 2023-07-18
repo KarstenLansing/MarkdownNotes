@@ -1,0 +1,44 @@
+version: 1
+imports: []
+schemas:
+  - id: root
+    children: []
+    title: Root
+    parent: root
+
+  - id: club-eh
+    children: [OSINT, Password_Cracking, Social_Engineering, Cryptography]
+    title: club-eh
+    parent: root
+
+  - id: modules
+    children: [Servers, DNS, Network_Ports, CORS]
+    title: modules
+    parent: root
+  
+  - id: OSINT
+    title: OSINT
+    parent: club-eh
+  - id: Password_Cracking
+    title: Password_Cracking
+    parent: club-eh
+  - id: Social_Engineering
+    title: Social_Engineering
+    parent: club-eh
+  - id: Cryptography
+    title: Cryptography
+    parent: club-eh
+
+  
+  - id: Servers
+    title: Servers
+    parent: modules
+  - id: DNS
+    title: DNS
+    parent: modules
+  - id: Network_Ports
+    title: Network_Ports
+    parent: modules
+  - id: CORS
+    title: CORS
+    parent: modules
